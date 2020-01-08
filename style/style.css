@@ -1,72 +1,50 @@
 /* Overall */
 body {
-  overflow: hidden;
+  /*	overflow: hidden;
+  */
   background-color: #F9F8F3 !important; }
 
 /* Animations */
-/*@keyframes shake {
+@keyframes shake {
   0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-   10% {
-    transform: translate3d(0,-1px, 0);
-  }
-  
+    transform: translate3d(0, 0, 0); }
+  10% {
+    transform: translate3d(0, -1px, 0); }
   20% {
-    transform: translate3d(0,-2px, 0);
-  }
-
-   30% {
-    transform: translate3d(0,-3px, 0);
-  }
-
+    transform: translate3d(0, -2px, 0); }
+  30% {
+    transform: translate3d(0, -3px, 0); }
   40% {
-    transform: translate3d(0, -4px, 0);
-  }
-
+    transform: translate3d(0, -4px, 0); }
   50% {
-    transform: translate3d(0, -5px, 0);
-  }
-
+    transform: translate3d(0, -5px, 0); }
   60% {
-    transform: translate3d(0, -4px, 0);
-  }
-
+    transform: translate3d(0, -4px, 0); }
   70% {
-    transform: translate3d(0, -3px, 0);
-  }
-
+    transform: translate3d(0, -3px, 0); }
   80% {
-    transform: translate3d(0, -2px, 0);
-  }
-
-   90% {
-    transform: translate3d(0, -1px, 0);
-  }
-
+    transform: translate3d(0, -2px, 0); }
+  90% {
+    transform: translate3d(0, -1px, 0); }
   100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-}	
-
+    transform: translate3d(0, 0, 0); } }
 .pulsating {
   display: inline-block;
   font-size: 24px;
-  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   animation-iteration-count: infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
   margin: auto;
   margin-left: 5px;
-  margin-bottom: 20px
-}*/
+  margin-bottom: 20px; }
+
 /* Title section */
 /* Dark pink */
 /* Dark gray */
 section.title {
+  height: 100vh;
   padding-top: 20px;
   font-family: sans-serif;
   margin: auto;
@@ -93,18 +71,69 @@ section.title {
     section.title h2 {
       font-size: 18px;
       width: 250px; } }
+  section.title .vertically-centered {
+    position: absolute;
+    top: 25%; }
 
-/* Highlight sections */
+/* End of title session */
+/* Highlight section */
 /* Light pink */
 /* Purple-ish */
-.highlight {
-  height: 300px;
-  margin-bottom: 30px; }
+section.highlights {
+  /* If it's not a desktop device, do this instead */
+  /* End of media query */ }
+  section.highlights .row {
+    min-height: 300px; }
+  section.highlights .highlight {
+    min-height: 300px;
+    margin-bottom: 30px; }
+  @media (max-width: 700px) {
+    section.highlights .row {
+      min-height: 550px; }
+    section.highlights .highlight {
+      min-height: 550px;
+      margin-bottom: 30px; }
+    section.highlights .image {
+      display: block;
+      height: 240px;
+      width: 240px;
+      margin: auto;
+      margin-top: 30px; }
+    section.highlights p.teaser {
+      font-family: 'Lato light', sans-serif;
+      margin: auto;
+      margin-top: 0px;
+      font-size: 20px;
+      text-align: center;
+      color: #F9F8F3; }
+    section.highlights .button-wrapper .highlight-button {
+      display: block;
+      margin: auto;
+      height: 30px;
+      width: 140px;
+      border: none;
+      margin-bottom: 5px;
+      font-family: "Lato light", sans-serif;
+      color: #F9F8F3;
+      text-decoration: underline;
+      text-decoration-thickness: .3px; } }
+  section.highlights .highlight-left {
+    background-color: #FF8C94; }
+    section.highlights .highlight-left .image {
+      -webkit-box-shadow: -10px 10px 0px 0px #CC527A;
+      -moz-box-shadow: -10px 10px 0px 0px #CC527A;
+      box-shadow: -10px 10px 0px 0px #CC527A; }
+    section.highlights .highlight-left .highlight-button {
+      background-color: #CC527A; }
+  section.highlights .highlight-right {
+    background-color: #CC527A; }
+    section.highlights .highlight-right .image {
+      -webkit-box-shadow: -10px 10px 0px 0px #FF8C94;
+      -moz-box-shadow: -10px 10px 0px 0px #FF8C94;
+      box-shadow: -10px 10px 0px 0px #FF8C94; }
+    section.highlights .highlight-right .highlight-button {
+      background-color: #FF8C94; }
 
-.highlight-left {
-  background-color: #FF8C94; }
-
-.highlight-right {
-  background-color: #CC527A; }
+/* End of highlight section*/
 
 /*# sourceMappingURL=style.css.map */

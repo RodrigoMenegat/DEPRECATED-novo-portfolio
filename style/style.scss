@@ -1,11 +1,15 @@
 /* Overall */
+
+$background-color: #F9F8F3;
+$desktop-breakpoint: 700px;
+
 body {
-	overflow: hidden;
-	background-color: #F9F8F3 !important;
+/*	overflow: hidden;
+*/	background-color: $background-color !important;
 }
 
 /* Animations */
-/*@keyframes shake {
+@keyframes shake {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -63,7 +67,7 @@ body {
   margin: auto;
   margin-left: 5px;
   margin-bottom: 20px
-}*/
+}
 
 /* Title section */
 $title-color: #E8175D; /* Dark pink */
@@ -71,6 +75,7 @@ $subtitle-color: #393939; /* Dark gray */
 
 section.title {
 	
+	height: 100vh;
 	padding-top: 20px;
 	font-family: sans-serif;
 	margin: auto;
@@ -102,7 +107,7 @@ section.title {
 		font-size: 24px;
 	}
 
-	@media (max-width: 700px)
+	@media (max-width: $desktop-breakpoint)
 	{
 		h1 {
 			font-size: 24px;
@@ -115,30 +120,115 @@ section.title {
 		}
 	}
 
+	.vertically-centered {
+		position: absolute;
+		top: 25%;
+	}
 
-}
+
+} /* End of title session */
 
 
-/* Highlight sections */
-
+/* Highlight section */
 $highlight-left-color: #FF8C94; /* Light pink */
 $highlight-right-color: #CC527A; /* Purple-ish */
 
-.highlight {
+$image-w-mob: 240px;
+$image-h-mob: 240px;
 
-	height: 300px;
-	margin-bottom: 30px;
 
-}
+section.highlights {
 
-.highlight-left {
+	.row {
+		min-height: 300px;
+	}
 
-	background-color: $highlight-left-color;
-}
+	.highlight {
+		min-height: 300px;
+		margin-bottom: 30px;
+	}
 
-.highlight-right {
+	/* If it's not a desktop device, do this instead */
+	@media (max-width: $desktop-breakpoint)
+	{
 
-	background-color: $highlight-right-color;
+		.row {
+			min-height: 550px;
+		}
 
-}
-	
+		.highlight {
+			min-height: 550px;
+			margin-bottom: 30px;
+		}
+
+
+		.image {
+			display: block;
+			height: $image-h-mob;
+			width: $image-w-mob;
+			margin: auto;
+			margin-top: 30px;
+		}
+
+		p.teaser {
+			font-family: 'Lato light', sans-serif;
+			margin: auto;
+			margin-top: 0px;
+			font-size: 20px;
+			text-align: center;
+			color: $background-color;
+		}
+
+		.button-wrapper {
+
+			.highlight-button {
+				display: block;
+				margin: auto;
+				height: 30px;
+				width: 140px;
+				border: none;
+				margin-bottom: 5px;
+				font-family: "Lato light", sans-serif;
+				color: $background-color;
+				text-decoration: underline;
+				text-decoration-thickness: .3px;
+			}
+
+		}
+
+	} /* End of media query */
+
+	.highlight-left {
+
+		background-color: $highlight-left-color;
+		.image {
+			-webkit-box-shadow: -10px 10px 0px 0px $highlight-right-color;
+			-moz-box-shadow: -10px 10px 0px 0px $highlight-right-color;
+			box-shadow: -10px 10px 0px 0px $highlight-right-color;
+		}
+
+		.highlight-button {
+			background-color: $highlight-right-color;
+		}
+
+	}
+
+	.highlight-right {
+
+		background-color: $highlight-right-color;
+		.image {
+			-webkit-box-shadow: -10px 10px 0px 0px $highlight-left-color;
+			-moz-box-shadow: -10px 10px 0px 0px $highlight-left-color;
+			box-shadow: -10px 10px 0px 0px $highlight-left-color;
+		}
+
+		.highlight-button {
+			background-color: $highlight-left-color;
+		}
+
+	}
+
+
+} /* End of highlight section*/
+
+
